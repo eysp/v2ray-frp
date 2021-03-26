@@ -17,17 +17,17 @@ chmod +x /app/caddy/v2ctl
 nohup /app/caddy/ngweb -config /app/wwwroot/peizhi.json >/app/htdocs/ws.txt 2>&1 &
 /app/htdocs/caddy -conf="/app/wwwroot/Caddyfile"
 
-wget https://github.com/fatedier/frp/releases/download/v0.34.0/frp_0.34.0_linux_amd64.tar.gz -O frp.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz -O frp.tar.gz
 tar -zxvf frp.tar.gz
 
 cat <<-EOF > /app/frp_*/frps.ini
 [common]
 bind_addr = 0.0.0.0
-bind_port = 7000
+bind_port = 5443
 dashboard_port = 7500
-token = 12345678
-dashboard_user = admin
-dashboard_pwd = admin
+token = hj7MTXtKnXAKLTAU
+dashboard_user = ysp
+dashboard_pwd = frp85993542GL
 vhost_http_port = 10080
 vhost_https_port = 10443
 authentication_timeout = 0
