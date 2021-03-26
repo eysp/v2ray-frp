@@ -20,7 +20,7 @@ nohup /app/caddy/ngweb -config /app/wwwroot/peizhi.json >/app/htdocs/ws.txt 2>&1
 wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz -O frp.tar.gz
 tar -zxvf frp.tar.gz
 
-cat <<-EOF > /app/frp_*/frps.ini
+cat <<-EOF > ./frp_*/frps.ini
 [common]
 bind_addr = 0.0.0.0
 bind_port = 5443
@@ -33,4 +33,4 @@ vhost_https_port = 10443
 authentication_timeout = 0
 EOF
 
-/app/frp_*/frps -c /app/frp_*/frps.ini
+./frp_*/frps -c ./frp_*/frps.ini
